@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qpu1kd80a-go-gitops
+  description: This is GitOps manifest for qpu1kd80a-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=qpu1kd80a-go
+    backstage.io/kubernetes-id: qpu1kd80a-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: qpu1kd80a-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qpu1kd80a-go
